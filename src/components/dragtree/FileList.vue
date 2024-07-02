@@ -1,5 +1,5 @@
 <template>
-<!--  TODO : 拖拽文件列表有bug-->
+<!--可拖拽树形文件管理-->
   <div>
     <h2>文件管理列表</h2>
     <draggable v-model="files" class="list-group" tag="ul" :move="checkMove" @end="onEnd">

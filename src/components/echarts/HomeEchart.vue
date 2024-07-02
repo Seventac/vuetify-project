@@ -113,6 +113,6 @@ export default {
 <style scoped>
 .pie-chart-container {
   width: 100%;
-  height: 250px; /* 或者你需要的任何高度 */
+  height: 275px; /* 或者你需要的任何高度 */
 }
 </style>

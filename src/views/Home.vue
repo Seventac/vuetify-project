@@ -43,5 +43,4 @@ export default {
     flex-direction: column; /* 改为垂直方向 */
   }
 }
-
 </style>

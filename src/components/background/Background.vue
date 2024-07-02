@@ -2,7 +2,7 @@
 <!--  TODO 背景图片在不同移动端宽度处理-->
   <div class="back-box" @touchstart.prevent="handleTouchStart" @touchend.prevent="handleTouchEnd">
     <div class="cover"></div>
-    <img :class="{ blurred: isBlurred }" src="https://cdn.seovx.com/d/?mom=302" alt="背景图片">
+    <img :class="{ blurred: isBlurred }" src="https://cdn.seovx.com/d/?mom=302" alt="背景图片"></img>
   </div>
 </template>
 

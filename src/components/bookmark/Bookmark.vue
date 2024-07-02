@@ -85,12 +85,20 @@ export default defineComponent({
       motto: getMotto(),
     });
 
-    // 获取初始数据
+    // 获取冲浏览器的存储机制（如IndexDB）中获取初始数据
     localforage.getItem('WARBLER_DATA').then((value) => {
       // 查询数据库  如果存在数据 使用库里的数据  否则使用初始默认数据
       if (value) {
+        createMessage({
+          type: 'success',
+          message: '数据加载成功',
+        });
         state.warblerData = JSON.parse(value as string) as LabelListProps;
       } else {
+        createMessage({
+          type: 'success',
+          message: '未请求到数据, 使用默认数据',
+        });
         state.warblerData = initData;
       }
     });

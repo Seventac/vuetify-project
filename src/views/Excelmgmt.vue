@@ -1,4 +1,5 @@
 <template>
+<!--  TODO markdown编辑器和预览组件-->
   <v-sheet class="d-flex flex-wrap bg d-flex-mobile">
     <v-sheet class="flex-1-1 ma-2 pa-2 bg-color">
       <h1>Excel 管理</h1>
@@ -19,7 +20,12 @@
     </v-sheet>
     <!-- TODO 文件管理列表，可拖拽文件进行分类 -->
     <v-sheet class="flex-1-1 ma-2 pa-1 bg-color">
-<!--      <file-list/>-->
+
+    </v-sheet>
+    <v-sheet class="flex-1-1-100 ma-2 pa-1 bg-color">
+      <div>
+          <markdown/>
+      </div>
     </v-sheet>
   </v-sheet>
 </template>
@@ -30,15 +36,15 @@ import {saveAs} from 'file-saver';
 import * as XLSX from 'xlsx';
 import ExcelUploadExport from "../components/commons/ExcelUploadExport.vue";
 import ExcelEditor from "../components/commons/ExcelEditor";
-
+import Markdown from "../components/markdown/Markdown";
 
 export default {
   name: "ExcelMgmt",
   components: {
     ExcelUploadExport,
     ExcelEditor,
+    Markdown
     // FileList
-
   },
   setup() {
     const jsondata = ref([
@@ -46,9 +52,7 @@ export default {
     ]);
     //导入的excel文件数据
     const importedData = ref([]);
-    const filename = ref(null)
-
-
+    const filename = ref(null);
     // TODO 将父组件导入excel值中的文件名进行传递
     // const items = ref([
     //   {type: 'subheader', title: '上传后的临时文件'},
